@@ -12,12 +12,12 @@ function App() {
   const [avgFilter, setAvgFilter] = useState("all");
   const [avgHocLuc, setAvgHocLuc] = useState("all");
   const handleSearch = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
 
     setSearchName(event.target.value);
   };
   const handleAvgFilter = (event) => {
-    console.log(typeof event.target.value);
+    // console.log(typeof event.target.value);
     setAvgFilter(event.target.value);
   };
   const handleHocLuc = (event) => {
