@@ -1,22 +1,11 @@
-import useQueryParams from "./hooks/useFetchListWithParams";
+import ProductList from "./Components/ProductList"
 
 function App() {
-  const [products, loading, error] = useQueryParams("products", {});
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
   return (
     <div>
-      <h1>Danh sach san pham</h1>
-
-      {products &&
-        products.map((item) => (
-          <div key={item.id}>
-            {item.id} - {item.title}
-          </div>
-        ))}
+      <ProductList />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
