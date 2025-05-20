@@ -1,10 +1,7 @@
-import ProductList from "./Components/ProductList"
 
 function App() {
   return (
-    <div>
-      <ProductList />
-    </div>
+    <div>App</div>
   )
 }
 
