@@ -11,7 +11,7 @@ const usePagination = (initialLimit = 12) => {
   const prevPage = () => setPage((p) => Math.max(p - 1, 1));
   const changeLimit = (newLimit) => {
     setLimit(newLimit);
-    setPage(1); // reset về trang 1 nếu thay đổi limit
+    setPage(1);
   };
 
   return { page, limit, skip, nextPage, prevPage, changeLimit };

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const useSearchAndSort = () => {
   const [search, setSearch] = useState("");
-  const [sort, setSort] = useState(""); // "", "price-asc", "price-desc", "name-asc", "name-desc"
+  const [sort, setSort] = useState("");
 
   return {
     search,
