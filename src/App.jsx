@@ -1,11 +1,11 @@
-import ProductList from "./Components/ProductList"
+import AppRouter from "./router";
 
 function App() {
   return (
     <>
-      <ProductList />
+      <AppRouter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
