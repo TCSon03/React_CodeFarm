@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createProduct } from './../../api/productApi';
 const initFormData = {
   title: "",
   description: "",
@@ -14,9 +15,15 @@ const ProductForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    try {
+      const data = await createProduct(formData);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="container mx-auto">
