@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import HeaderAdmin from "../Components/HeaderAdmin";
-import FooterAdmin from "../Components/FooterAdmin";
+// import FooterAdmin from "../Components/FooterAdmin";
 
 const AdminLayout = () => {
   return (
@@ -9,7 +9,7 @@ const AdminLayout = () => {
       <main>
         <Outlet />
       </main>
-      <FooterAdmin />
+      {/* <FooterAdmin /> */}
     </div>
   );
 };

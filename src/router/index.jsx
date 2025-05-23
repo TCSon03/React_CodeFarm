@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import AdminLayout from "../Layouts/AdminLayout";
 import Dashboarh from "../pages/admins/Dashboarh";
 import NotfoundPage from "../pages/NotfoundPage";
+import ProductForm from "../pages/admins/ProductForm";
 
 const router = createBrowserRouter([
   // Layout Client
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <AdminLayout />,
-    children: [{ path: "/admin", element: <Dashboarh /> }],
+    children: [
+      { path: "/admin", element: <Dashboarh /> },
+      { path: "/admin/product-add", element: <ProductForm /> },
+    ],
   },
 
   //   Layout Empty
