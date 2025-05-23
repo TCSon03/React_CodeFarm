@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createProduct } from './../../api/productApi';
+import Form from "../../Components/Form";
 const initFormData = {
   title: "",
   description: "",
@@ -30,7 +31,7 @@ const ProductForm = () => {
       <h1 className="text-3xl font-bold text-center text-red-600">
         Them San Pham
       </h1>
-      <form action="" onSubmit={handleSubmit}>
+      <Form handleSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="" name="title" className="form-label">
             Title:
@@ -60,7 +61,7 @@ const ProductForm = () => {
         <div className="mb-3">
           <button className="w-full btn btn-primary">Them SP</button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };

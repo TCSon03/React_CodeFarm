@@ -1,24 +1,9 @@
 {
   "products": [
     {
-      "title": "sam sung",
-      "description": "san pham ok",
+      "title": "sam sung lo",
+      "description": "san pham tot",
       "id": 1
-    },
-    {
-      "title": "sam sung",
-      "description": "san pham ok",
-      "id": 2
-    },
-    {
-      "title": "san pham",
-      "description": "mo ta san pham",
-      "id": 3
-    },
-    {
-      "title": "san pham",
-      "description": "mo ta san pham",
-      "id": 4
     }
   ]
 }
