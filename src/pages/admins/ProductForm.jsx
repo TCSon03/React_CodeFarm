@@ -1,49 +1,47 @@
-import { useState } from "react";
-import { createProduct } from './../../api/productApi';
+import { createProduct } from "../../api/productApi";
 import Form from "../../Components/Form";
+import { useForm } from "react-hook-form";
 const initFormData = {
   title: "",
   description: "",
 };
 
 const ProductForm = () => {
-  const [formData, setFormData] = useState(initFormData);
-  const handleChange = (data) => {
-    const { name, value } = data.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData);
+  const onSubmit = async (data) => {
     try {
-      const data = await createProduct(formData);
-      console.log(data);
+      const res = await createProduct(data);
+      console.log(res);
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold text-center text-red-600">
         Them San Pham
       </h1>
-      <Form handleSubmit={handleSubmit}>
+      <Form handleSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="" name="title" className="form-label">
             Title:
           </label>
           <input
             type="text"
-            name="title"
             placeholder="Product name"
             className="border form-control"
-            onChange={handleChange}
-            defaultValue={formData.title}
+            {...register("title", { required: true })}
           />
+          {errors.title && (
+            <span className="text-danger">Title khong de trong</span>
+          )}
         </div>
         <div className="mb-3">
           <label htmlFor="" name="description" className="form-label">
@@ -51,16 +49,20 @@ const ProductForm = () => {
           </label>
           <input
             type="text"
-            name="description"
             placeholder="Description "
             className="border form-control"
-            onChange={handleChange}
-            defaultValue={formData.description}
+            {...register("description", { required: true })}
           />
+          {errors.description && (
+            <span className="text-danger">Des khong de trong</span>
+          )}
         </div>
         <div className="mb-3">
           <button className="w-full btn btn-primary">Them SP</button>
         </div>
+        <button className="w-full btn btn-secondary" onClick={reset}>
+          Cancel
+        </button>
       </Form>
     </div>
   );
