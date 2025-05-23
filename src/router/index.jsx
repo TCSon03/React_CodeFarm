@@ -1,28 +1,37 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
-import RegisterPage from "../pages/RegisterPage";
-import HomePage from "../pages/HomePage";
-import DashBoardPage from "../pages/admin/DashBoardPage";
 import ClientLayout from "../Layouts/ClientLayout";
-import NotFoundPage from "./../pages/NotFoundPage";
+import HomePage from "../pages/clients/HomePage";
+import Product from "../pages/clients/ProductPage";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import AdminLayout from "../Layouts/AdminLayout";
+import Dashboarh from "../pages/admins/Dashboarh";
+import NotfoundPage from "../pages/NotfoundPage";
 
 const router = createBrowserRouter([
+  // Layout Client
   {
     path: "/",
     element: <ClientLayout />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "/about", element: <DashBoardPage /> },
+      { path: "/product", element: <Product /> },
     ],
   },
 
-  { path: "/login", element: <LoginPage /> },
-  { path: "/register", element: <RegisterPage /> },
-  { path: "*", element: <NotFoundPage /> },
-]);
+  // Layout Admin
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [{ path: "/admin", element: <Dashboarh /> }],
+  },
 
+  //   Layout Empty
+  { path: "/auth/login", element: <Login /> },
+  { path: "/auth/register", element: <Register /> },
+  { path: "*", element: <NotfoundPage /> },
+]);
 const AppRouter = () => {
   return <RouterProvider router={router} />;
 };
-
 export default AppRouter;
