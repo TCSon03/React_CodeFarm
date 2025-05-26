@@ -8,6 +8,9 @@ import AdminLayout from "../Layouts/AdminLayout";
 import Dashboarh from "../pages/admins/Dashboarh";
 import NotfoundPage from "../pages/NotfoundPage";
 import ProductForm from "../pages/admins/ProductForm";
+import AboutPage from "../pages/clients/AboutPage";
+import BlogPage from "../pages/clients/BlogPage";
+import ProductAdmin from "../pages/admins/ProductAdmin";
 
 const router = createBrowserRouter([
   // Layout Client
@@ -17,6 +20,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/product", element: <Product /> },
+      { path: "/about", element: <AboutPage /> },
+      { path: "/blog", element: <BlogPage /> },
     ],
   },
 
@@ -27,6 +32,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/admin", element: <Dashboarh /> },
       { path: "/admin/product-add", element: <ProductForm /> },
+      { path: "/admin/product", element: <ProductAdmin /> },
     ],
   },
 

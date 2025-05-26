@@ -1,10 +1,10 @@
 import { createProduct } from "../../api/productApi";
 import Form from "../../Components/Form";
 import { useForm } from "react-hook-form";
-const initFormData = {
-  title: "",
-  description: "",
-};
+// const initFormData = {
+//   title: "",
+//   description: "",
+// };
 
 const ProductForm = () => {
   const {

@@ -1,34 +1,33 @@
 {
   "products": [
     {
-      "title": "san pham moi",
-      "description": "mo ta san pham",
-      "id": 1
+      "id": 1,
+      "title": "Todo 1",
+      "completed": false,
+      "createdAt": "2025-05-01T10:00:00Z",
+      "priority": "high",
+      "description": "Description for Todo 1"
     },
     {
-      "title": "san pham moi",
-      "description": "mo ta san pham",
-      "id": 2
+      "id": 2,
+      "title": "Todo 2",
+      "completed": true,
+      "createdAt": "2025-05-02T10:00:00Z",
+      "priority": "medium",
+      "description": "Description for Todo 2"
     },
     {
-      "title": "fssdf",
-      "description": "dafadfasdfasdf",
-      "id": 3
+      "id": 3,
+      "title": "Todo 3",
+      "completed": false,
+      "createdAt": "2025-05-03T10:00:00Z",
+      "priority": "low",
+      "description": "Description for Todo 3"
     },
     {
-      "title": "fddfdfd",
-      "description": "fdfdfdfddfdfd",
+      "title": "ok nha",
+      "description": "ok nha",
       "id": 4
-    },
-    {
-      "title": "fdfddfd",
-      "description": "dfdfdf",
-      "id": 5
-    },
-    {
-      "title": "dfdfdfd",
-      "description": "dfdfdd",
-      "id": 6
     }
   ]
 }

@@ -1,15 +1,17 @@
 import { Outlet } from "react-router-dom";
 import HeaderAdmin from "../Components/HeaderAdmin";
-// import FooterAdmin from "../Components/FooterAdmin";
+import SideBarAdmin from "../Components/SideBarAdmin";
 
 const AdminLayout = () => {
   return (
-    <div>
-      <HeaderAdmin />
-      <main>
-        <Outlet />
-      </main>
-      {/* <FooterAdmin /> */}
+    <div className="h-screen flex bg-gray-100">
+      <SideBarAdmin />
+      <div className="w-full mx-4">
+        <HeaderAdmin />
+        <div className="border bg-white rounded-md">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };

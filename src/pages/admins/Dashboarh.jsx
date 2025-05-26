@@ -1,5 +1,5 @@
 const Dashboarh = () => {
-  return <div>Dashboarh</div>;
+  return <div className="">Dashboarh</div>;
 };
 
 export default Dashboarh;
