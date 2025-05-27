@@ -1,8 +1,11 @@
+import Routes from "./router";
 
 function App() {
   return (
-    <div>Day la task 47</div>
-  )
+    <div>
+      <Routes />
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Todo 1",
+      "completed": false,
+      "createdAt": "2025-05-01T10:00:00Z",
+      "priority": "high",
+      "description": "Description for Todo 1"
+    },
+    {
+      "title": "Todo43434",
+      "description": "Description for Todo 2",
+      "priority": "medium",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "title": "san pham a",
+      "description": "mo ta a",
+      "priority": "low",
+      "completed": true,
+      "id": 3
+    }
+  ]
+}
