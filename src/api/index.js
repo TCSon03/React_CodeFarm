@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://react-code-farm-5os286ibz-tcson03s-projects.vercel.app",
   headers: {
     "Content-Type": "application/json",
   },
