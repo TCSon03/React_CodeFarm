@@ -13,5 +13,5 @@ export const createTask = (data) => api.post("/products", data);
 export const getTaskById = (id) => api.get(`/products/${id}`);
 export const updateTask = (id, data) => api.put(`/products/${id}`, data);
 
-export const loginApi = (data) => api.post('/login', data)
 export const registerApi = (data) => api.post('/register', data)
+export const loginApi = (data) => api.post('/login', data)

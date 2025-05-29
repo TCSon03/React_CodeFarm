@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form";
-import { loginApi } from "../api";
+import { useNavigate } from "react-router-dom";
 import { loginSchema } from "../validations/authSchema";
+import { loginApi } from "../api";
 import { toast } from "react-toastify";
 
 const Login = () => {
+  const nav = useNavigate();
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -13,16 +16,17 @@ const Login = () => {
     try {
       console.log(data);
       const res = await loginApi(data);
-      if (res.status !== 200) {
-        throw new Error("Login failed");
-      }
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
-      localStorage.setItem("isAuthenticated", true);
       console.log(res);
-      toast.success("Login successfully")
+      if (res) {
+        localStorage.setItem("accessToken", res.data.accessToken);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        nav("/");
+        toast.success("Login successfully");
+      }
     } catch (error) {
-      toast.error("Login failed:", error);
+      reset();
+      console.error("Login failed:", error);
+      toast.error(error.response.data || "Login failed");
     }
   };
   return (
@@ -30,17 +34,17 @@ const Login = () => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username:
+          <label htmlFor="email" className="form-label">
+            Email:
           </label>
           <input
             type="text"
             className="form-control"
-            id="username"
-            {...register("username", { required: "Username is required" })}
+            id="email"
+            {...register("email", { required: "Email is required" })}
           />
-          {errors.username && (
-            <span className="text-danger">{errors.username.message}</span>
+          {errors.email && (
+            <span className="text-danger">{errors.email.message}</span>
           )}
         </div>
 
