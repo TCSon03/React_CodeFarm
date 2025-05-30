@@ -6,10 +6,11 @@ const Header = () => {
     <div>
         <ul>
             <li>
-                <Link to='/'>Dashboard</Link>
+                <Link to='/admin'>Dashboard</Link>
             </li>
+            
             <li>
-                <Link to='/add'>Product Add</Link>
+                <Link to='/admin/add'>Product Add</Link>
             </li>
         </ul>
     </div>
