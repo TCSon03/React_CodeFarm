@@ -1,14 +1,15 @@
-import { ToastContainer } from "react-toastify";
-import Routes from "./router";
-import { toastContainerConfig } from "./utils/toastConfig";
+import React from "react";
+import HeaderClient from "./components/HeaderClient";
+import { ThemeProvider } from "./context/ThemeContext";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Routes />
-      <ToastContainer {...toastContainerConfig} />
-    </div>
+    
+    <ThemeProvider>
+
+      <HeaderClient />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -1,23 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LayoutAdmin from "../layouts/LayoutAdmin";
-import Dashboard from "../pages/admin/Dashboard";
-import ProductForm from "../pages/admin/ProductForm";
-import ProductDetail from "../pages/admin/ProductDetail";
+
 import LayoutClient from "../layouts/LayoutClient";
-import HomePage from "../pages/client/HomePage";
-import ShopPage from "../pages/client/ShopPage";
+
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProtectedRoute from "../components/ProtectedRoute";
+import clientRoutes from "./clientRoutes";
+import adminRoutes from "./adminRoutes";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <LayoutClient />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/shop", element: <ShopPage /> },
-    ],
+    children: clientRoutes,
   },
   {
     path: "",
@@ -26,12 +22,7 @@ const routes = createBrowserRouter([
       {
         path: "/admin",
         element: <LayoutAdmin />,
-        children: [
-          { path: "/admin", element: <Dashboard /> },
-          { path: "/admin/add", element: <ProductForm /> },
-          { path: "/admin/edit/:id", element: <ProductForm /> },
-          { path: "/admin/detail/:id", element: <ProductDetail /> },
-        ],
+        children: adminRoutes,
       },
     ],
   },
